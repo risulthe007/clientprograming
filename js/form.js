@@ -22,9 +22,13 @@ form.addEventListener("submit", function (event) {
     showError("name", "Please enter your name.");
     ok = false;
   }
-  if (email === "") {
-    showError("email", "Please enter your email address.");
-    ok = false;
+    if (email === "") {
+     showError("email", "Please enter your email address.");
+     ok = false;
+   } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+     showError("email", "Please enter a valid email address, like name@example.com.");
+     ok = false;
+   }
   }
   if (question === "") {
     showError("question", "Please write your question.");
