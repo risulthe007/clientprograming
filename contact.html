@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact – Pohjanpiha Festival</title>
+  <meta name="description" content="Send a question to the Pohjanpiha Festival team.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="lineup.html">Lineup</a>
+      <a href="area.html">Area</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://example.com/tickets">Tickets</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Contact</h1>
+    <p>Ask us anything about the festival or the area, including accessibility.</p>
+
+    <form id="question-form" novalidate>
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <span class="error" id="name-error"></span>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error" id="email-error"></span>
+      </div>
+      <div>
+        <label for="question">Your question</label>
+        <textarea id="question" name="question" rows="5" required></textarea>
+        <span class="error" id="question-error"></span>
+      </div>
+      <button type="submit">Send question</button>
+    </form>
+
+    <p id="form-status" role="status"></p>
+  </main>
+  <footer>
+    <p>Pohjanpiha Festival, Alavus</p>
+  </footer>
+</body>
+</html>
