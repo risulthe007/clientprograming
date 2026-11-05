@@ -1,30 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact - Pohjanpiha Festival</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>My Website</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="listing.html">Listing</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="listing.html">Lineup</a>
+    <a href="about.html">Area</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.lippu.fi">Tickets</a>
+  </nav>
+
   <main>
-    <h2>Contact</h2>
-    <form>
-      <input type="text" placeholder="Your name" required>
-      <input type="email" placeholder="Your email" required>
-      <textarea rows="5" placeholder="Your message" required></textarea>
-      <button type="submit">Send</button>
+    <h1>Contact</h1>
+    <p>Ask us anything about the festival or the area.</p>
+
+    <form id="question-form" novalidate>
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name">
+        <span class="error" id="name-error"></span>
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email">
+        <span class="error" id="email-error"></span>
+      </div>
+
+      <div>
+        <label for="question">Your question</label>
+        <textarea id="question" rows="5"></textarea>
+        <span class="error" id="question-error"></span>
+      </div>
+
+      <button type="submit">Send question</button>
     </form>
+
+    <p id="form-status"></p>
   </main>
-  <footer>&copy; 2026 My Website</footer>
+
+  <footer>
+    <p>Pohjanpiha Festival, Alavus</p>
+  </footer>
+
+  <script src="js/form.js"></script>
 </body>
 </html>
