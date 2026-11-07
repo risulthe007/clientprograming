@@ -3,51 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact - Pohjanpiha Festival</title>
+  <title>Contact – Pohjanpiha Festival</title>
+  <meta name="description" content="Send a question to the Pohjanpiha Festival team.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="listing.html">Lineup</a>
-    <a href="about.html">Area</a>
-    <a href="contact.html">Contact</a>
-    <a href="https://www.lippu.fi">Tickets</a>
-  </nav>
-
+  <header>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="listing.html">Lineup</a>
+      <a href="about.html">Area</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.lippu.fi">Tickets</a>
+    </nav>
+  </header>
   <main>
     <h1>Contact</h1>
-    <p>Ask us anything about the festival or the area.</p>
+    <p>Ask us anything about the festival or the area, including accessibility.</p>
 
     <form id="question-form" novalidate>
       <div>
         <label for="name">Name</label>
-        <input type="text" id="name">
+        <input type="text" id="name" name="name" required>
         <span class="error" id="name-error"></span>
       </div>
-
       <div>
         <label for="email">Email</label>
-        <input type="email" id="email">
+        <input type="email" id="email" name="email" required>
         <span class="error" id="email-error"></span>
       </div>
-
       <div>
         <label for="question">Your question</label>
-        <textarea id="question" rows="5"></textarea>
+        <textarea id="question" name="question" rows="5" required></textarea>
         <span class="error" id="question-error"></span>
       </div>
-
       <button type="submit">Send question</button>
     </form>
 
-    <p id="form-status"></p>
+    <p id="form-status" role="status"></p>
   </main>
-
   <footer>
     <p>Pohjanpiha Festival, Alavus</p>
   </footer>
-
   <script src="js/form.js"></script>
 </body>
 </html>
