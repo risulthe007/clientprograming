@@ -1,4 +1,9 @@
 const form = document.getElementById("question-form");
+const statusBox = document.getElementById("form-status");
+
+function showError(id, message) {
+  document.getElementById(id + "-error").textContent = message;
+}
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -8,36 +13,36 @@ form.addEventListener("submit", function (event) {
   const question = document.getElementById("question").value.trim();
   let ok = true;
 
-  document.getElementById("name-error").textContent = "";
-  document.getElementById("email-error").textContent = "";
-  document.getElementById("question-error").textContent = "";
-  document.getElementById("form-status").textContent = "";
+  showError("name", "");
+  showError("email", "");
+  showError("question", "");
+  statusBox.textContent = "";
 
   if (name === "") {
-    document.getElementById("name-error").textContent = "Please enter your name.";
+    showError("name", "Please enter your name.");
     ok = false;
   }
 
   if (email === "") {
-    document.getElementById("email-error").textContent = "Please enter your email.";
+    showError("email", "Please enter your email address.");
     ok = false;
   } else if (!email.includes("@") || !email.includes(".")) {
-    document.getElementById("email-error").textContent = "Please enter a valid email.";
+    showError("email", "Please enter a valid email, like name@example.com.");
     ok = false;
   }
 
   if (question === "") {
-    document.getElementById("question-error").textContent = "Please write your question.";
+    showError("question", "Please write your question.");
     ok = false;
   } else if (question.length < 10) {
-    document.getElementById("question-error").textContent = "Please write at least 10 characters.";
+    showError("question", "Please write at least 10 characters.");
     ok = false;
   }
 
   if (ok) {
-    document.getElementById("form-status").textContent = "Thank you! Your question is ready to be sent.";
+    statusBox.textContent = "Thank you! Your question is ready to be sent.";
     form.reset();
   } else {
-    document.getElementById("form-status").textContent = "Please fix the errors above.";
+    statusBox.textContent = "Please fix the errors above.";
   }
 });
