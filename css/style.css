@@ -8,7 +8,7 @@ body {
   line-height: 1.6;
 }
 header { background: var(--text); }
-nav { display: flex; flex-wrap: wrap; gap: 1rem; padding: 1rem; background: var(--text); }
+nav { display: flex; flex-wrap: wrap; gap: 1rem; padding: 1rem; }
 nav a { color: #fff; font-weight: 700; text-decoration: none; }
 nav a:hover, nav a:focus { color: var(--accent); }
 main { max-width: 50rem; margin: 0 auto; padding: 1rem; }
@@ -38,3 +38,26 @@ input, textarea {
   box-sizing: border-box;
   padding: 0.5rem;
   font: inherit;
+  border: 2px solid var(--text);
+}
+button {
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-weight: 800;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  border: 0;
+  cursor: pointer;
+}
+.error { display: block; color: #b3261e; font-weight: 700; }
+#form-status { font-weight: 700; }
+
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 30rem) {
+  nav { flex-direction: column; gap: 0.5rem; }
+}
